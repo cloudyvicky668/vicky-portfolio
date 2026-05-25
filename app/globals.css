@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* 主背景：奶油白 / 杏色渐变用 */
+  --color-bg-cream: #FAF6EF;
+  --color-bg-cream-light: #FFFDF8;
+  --color-bg-cream-warm: #F5EBDC;
+
+  /* 左侧导航背景 */
+  --color-sidebar-bg: #F5EDE0;
+
+  /* 案例页纸张/背景框 */
+  --color-paper: #F4E8D0;
+  --color-paper-light: #FBF3E5;
+  --color-paper-deep: #EFDFC3;
+
+  /* 强调色：焦糖橙 */
+  --color-accent: #D4915A;
+  --color-accent-soft: #E7B98E;
+
+  /* 保留现有高级墨绿色 */
+  --color-deep-green: #2D3328;
+
+  /* 文字 */
+  --color-ink: #2C2A26;
+  --color-text: #6F675F;
+  --color-muted: #9B9288;
+
+  /* 网格线 */
+  --color-grid-line: rgba(184, 163, 132, 0.14);
+
+  /* 暖色阴影 */
+  --shadow-warm-paper: 
+    0 20px 60px rgba(117, 82, 45, 0.14), 
+    0 6px 20px rgba(117, 82, 45, 0.08);
+}
+
+@font-face {
+  font-family: 'PFanHuTuTi';
+  src: url('/fonts/PFanHuTuTi_0.680.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ArchitectsDaughter';
+  src: url('/fonts/ArchitectsDaughter-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JiangCheng';
+  src: url('/fonts/江城解星体.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ChenYuluoyan-2.0-Thin';
+  src: url('/fonts/ChenYuluoyan-2.0-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'tegaki';
+  src: url('/fonts/tegaki.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HuiWenMingChao';
+  src: url('/fonts/汇文明朝体GBKv1.001.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-amber-brown;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .bg-container {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    will-change: opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+  }
+
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg rounded-organic shadow-glass;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-button {
+    @apply px-6 py-3 rounded-soft font-medium transition-all duration-300;
+    @apply bg-white/70 backdrop-blur-md hover:bg-white/90;
+    @apply shadow-glass hover:shadow-glass-hover;
+    @apply border border-white/40;
+  }
+
+  .organic-divider {
+    @apply relative h-16 overflow-hidden;
+  }
+
+  .organic-divider::after {
+    content: '';
+    @apply absolute inset-x-0 bottom-0 h-8;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C66.12,105.76,136.09,86.5,198.31,84.14,266.56,81.77,321.39,70.08,321.39,56.44Z' fill='%23FDFBF7' fill-opacity='1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-amber-brown via-wheat-gold to-peach-pink;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .handwriting-text {
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+/* 侧边栏导航自定义样式 */
+.nav-item-wrapper {
+  @apply relative;
+}
+
+.nav-item {
+  @apply relative block py-3 transition-all duration-300;
+}
+
+.nav-item-main {
+  @apply px-5;
+}
+
+.nav-item-child {
+  @apply px-10;
+}
+
+.nav-item-content {
+  @apply flex items-center gap-3;
+}
+
+.nav-item-icon {
+  @apply flex-shrink-0 w-5 h-5 flex items-center justify-center text-[var(--color-muted)];
+}
+
+/* 中英文双层文字容器 */
+.nav-item-text-wrapper {
+  @apply flex flex-col justify-center;
+}
+
+/* 英文文字 - 主要焦点 */
+.nav-item-text-en {
+  @apply font-architects text-[14px] md:text-[15px] font-semibold uppercase tracking-[0.2em] text-[var(--color-ink)] leading-relaxed transition-all duration-300;
+}
+
+.nav-item:hover .nav-item-text-en,
+.nav-item:focus .nav-item-text-en {
+  @apply text-[var(--color-accent)];
+}
+
+/* 中文文字 - 次要辅助 */
+.nav-item-text-cn {
+  @apply font-light text-[11px] md:text-[12px] text-[var(--color-muted)] tracking-wide leading-tight mt-0.5 transition-all duration-300;
+}
+
+.nav-item:hover .nav-item-text-cn,
+.nav-item:focus .nav-item-text-cn {
+  @apply text-[var(--color-text)];
+}
+
+/* 创意模式下的导航文字样式 */
+.creative-mode .nav-item-text-en {
+  @apply text-white;
+}
+
+.creative-mode .nav-item:hover .nav-item-text-en,
+.creative-mode .nav-item:focus .nav-item-text-en {
+  @apply text-[#FFD700];
+}
+
+.creative-mode .nav-item-text-cn {
+  @apply text-white/60;
+}
+
+.creative-mode .nav-item:hover .nav-item-text-cn,
+.creative-mode .nav-item:focus .nav-item-text-cn {
+  @apply text-white/80;
+}
+
+.creative-mode .nav-item-icon {
+  @apply text-white/60;
+}
+
+/* 子菜单文字 - 稍小一点 */
+.nav-item-child .nav-item-text-en {
+  @apply text-[12px] md:text-[13px];
+}
+
+.nav-item-child .nav-item-text-cn {
+  @apply text-[10px] md:text-[11px];
+}
+
+/* 左侧激活状态竖线 */
+.nav-item-indicator {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-0 bg-[var(--color-accent)] transition-all duration-300 rounded-full;
+}
+
+.nav-item:hover .nav-item-indicator,
+.nav-item:focus .nav-item-indicator {
+  @apply h-8;
+}
+
+/* 当前激活页面的导航项样式 */
+.nav-item.active .nav-item-indicator {
+  @apply h-8;
+}
+
+.nav-item.active .nav-item-text-cn {
+  @apply text-[var(--color-accent)];
+}
+
+.nav-item.active .nav-item-text-en {
+  color: var(--color-accent);
+  opacity: 0.8;
+}
+
+/* 悬浮下划线动画 */
+.nav-item-underline {
+  @apply absolute bottom-1 left-5 right-5 h-[1.5px] transform scale-x-0 origin-left transition-transform duration-300;
+  background-color: rgba(212, 145, 90, 0.4);
+}
+
+.nav-item-main .nav-item-underline {
+  @apply left-5 right-5;
+}
+
+.nav-item-child .nav-item-underline {
+  @apply left-10 right-5;
+}
+
+.nav-item:hover .nav-item-underline,
+.nav-item:focus .nav-item-underline {
+  @apply scale-x-100;
+  background-color: rgba(212, 145, 90, 0.6);
+}
+
+/* 子菜单展开/折叠动画 */
+.nav-submenu {
+  @apply overflow-hidden;
+}
+
+.nav-submenu-closed {
+  @apply max-h-0 opacity-0;
+}
+
+.nav-submenu-open {
+  @apply max-h-48 opacity-100;
+}
+
+/* 下载按钮旋转动画 */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.download-spinner {
+  animation: spinner 1s linear infinite;
+}
+
+/* 键盘焦点样式 */
+.nav-item:focus {
+  @apply outline-none;
+}
+
+.nav-item:focus-visible {
+  @apply bg-white/50 rounded-lg;
+}
+
+/* 首页背景渐变样式 */
+.home-page-container {
+  background: 
+    radial-gradient(
+      circle at 72% 24%,
+      rgba(212, 145, 90, 0.10) 0%,
+      rgba(212, 145, 90, 0) 34%
+    ),
+    radial-gradient(
+      circle at 40% 72%,
+      rgba(244, 197, 138, 0.12) 0%,
+      rgba(244, 197, 138, 0) 38%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFDF8 0%,
+      #FAF6EF 48%,
+      #F5EBDC 100%
+    );
+}
+
+/* 案例页纸张卡片样式 */
+.case-study-card {
+  background: 
+    radial-gradient(
+      circle at 34% 18%,
+      rgba(255, 255, 255, 0.48) 0%,
+      rgba(255, 255, 255, 0) 38%
+    ),
+    linear-gradient(
+      180deg,
+      #FBF3E5 0%,
+      #F4E8D0 55%,
+      #EFDFC3 100%
+    );
+  border: 1px solid rgba(210, 180, 140, 0.22);
+  box-shadow: var(--shadow-warm-paper);
+}
+
+/* 案例页整体背景：带微暖渐变的网格背景 */
+.marketing-page,
+.case-page,
+.case-detail-page,
+.portfolio-page,
+.showcase-page {
+  background-color: var(--color-bg-cream);
+  background-image:
+    linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(
+      135deg,
+      #FFFDF8 0%,
+      #FAF6EF 50%,
+      #F7EDE0 100%
+    );
+  background-size:
+    24px 24px,
+    24px 24px,
+    100% 100%;
+  background-position:
+    0 0,
+    0 0,
+    center;
+}
+
+/* 墨绿色结果卡片增强质感 */
+.result-card,
+.case-result,
+.result-panel {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 36%
+    ),
+    linear-gradient(
+      135deg,
+      #2F382C 0%,
+      #263024 48%,
+      #1F261E 100%
+    );
+  box-shadow:
+    0 14px 34px rgba(31, 38, 30, 0.28),
+    0 4px 10px rgba(31, 38, 30, 0.18);
+}
+
+/* 案例页文字颜色统一 */
+/* 大标题 */
+.case-title,
+.page-title,
+.project-title {
+  color: var(--color-ink);
+}
+
+/* 正文 */
+.case-description,
+.case-body,
+.project-description,
+.case-content p {
+  color: var(--color-text);
+}
+
+/* 次级文字 */
+.case-subtitle,
+.project-subtitle,
+.muted-text {
+  color: var(--color-muted);
+}
+
+/* SITUATION / TASK / ACTION / RESULT 等小标题 */
+.section-label,
+.case-section-label {
+  color: #8A7157;
+}
+
+/* 标签 pill 样式 */
+.case-tag,
+.tag,
+.pill {
+  background: rgba(255, 253, 248, 0.86);
+  color: #9B8A78;
+  border: 1px solid rgba(210, 180, 140, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 2px 6px rgba(117, 82, 45, 0.05);
+}
+
+/* 左侧导航栏背景 */
+.sidebar,
+.side-nav,
+.left-nav {
+  /* 背景样式由组件内联样式控制 */
+}
+
+/* 下载 PDF 简历按钮 */
+.download-btn,
+.resume-download-btn {
+  color: var(--color-accent);
+  border-color: rgba(212, 145, 90, 0.65);
+  background: rgba(255, 253, 248, 0.38);
+}
+
+.download-btn:hover,
+.resume-download-btn:hover {
+  color: #FFFFFF;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow:
+    0 8px 22px rgba(212, 145, 90, 0.22);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .sidebar {
+    @apply w-full max-w-sm;
+  }
+}
+
+/* 创意模式对话框样式 - 手账风格 */
+.dialog-box {
+  position: relative;
+  background:
+    linear-gradient(160deg, rgba(252, 240, 220, 0.85) 0%, rgba(248, 232, 208, 0.75) 100%),
+    radial-gradient(circle at 30% 30%, rgba(255, 200, 130, 0.25), transparent 70%);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(210, 180, 140, 0.45);
+  box-shadow:
+    0 4px 24px rgba(120, 80, 40, 0.15),
+    0 1px 3px rgba(120, 80, 40, 0.08),
+    inset 0 1px 0 rgba(255, 245, 225, 0.6);
+  transition: all 0.3s ease-out;
+}
+
+/* 牛皮纸纹理 */
+.dialog-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+}
+
+/* 和纸胶带装饰 */
+.washi-tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 110px;
+  height: 28px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(220, 180, 140, 0.5),
+      rgba(220, 180, 140, 0.5) 4px,
+      rgba(200, 160, 120, 0.5) 4px,
+      rgba(200, 160, 120, 0.5) 8px
+    ),
+    linear-gradient(135deg, rgba(245, 215, 175, 0.7), rgba(230, 195, 150, 0.7));
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+  z-index: 2;
+}
+
+/* About Me 页面主背景 */
+.about-me-bg {
+  background:
+    radial-gradient(
+      ellipse at 78% 18%,
+      rgba(180, 210, 200, 0.10) 0%,
+      rgba(180, 210, 200, 0) 40%
+    ),
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(255, 245, 230, 0.15) 0%,
+      rgba(255, 245, 230, 0) 45%
+    ),
+    radial-gradient(
+      circle at 60% 50%,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0) 50%
+    ),
+    linear-gradient(
+      160deg,
+      #FBFAF6 0%,
+      #FAFAF5 40%,
+      #F8F7F2 100%
+    );
+  background-color: #FBFAF6;
+}
+
+/* About Me 页面卡片/内容框 */
+.about-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* About Me 页面分割线 */
+.about-divider {
+  border-color: rgba(200, 195, 185, 0.35);
+}
+
+/* 手绘下划线高亮 */
+.highlight {
+  position: relative;
+  display: inline-block;
+  color: #8b5a2b;
+  font-weight: 500;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: -4px;
+  height: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'%3E%3Cpath d='M0,3 Q25,0 50,3 T100,3' stroke='%23d4915a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.8;
+}
