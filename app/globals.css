@@ -209,13 +209,14 @@
   @apply text-[var(--color-text)];
 }
 
-/* 创意模式侧边栏样式 */
+/* 创意模式侧边栏样式 - 透明毛玻璃效果 */
 .sidebar.creative-mode {
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(24px) saturate(1.1) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(1.1) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  background: transparent !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* 创意模式下的导航文字样式 */
