@@ -36,7 +36,7 @@ export default function ViewModeProvider({
                 className="absolute inset-0 w-full h-full"
               >
                 <Image
-                  src="/images/creative-bg.webp"
+                  src="/images/creative-bg-final.webp"
                   alt="Creative Background"
                   fill
                   priority
