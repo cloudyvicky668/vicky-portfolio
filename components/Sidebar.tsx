@@ -220,9 +220,11 @@ export default function Sidebar() {
   // 根据模式设置侧边栏样式
   const sidebarStyle = isCreativeMode 
     ? {
-        backdropFilter: 'blur(20px)',
-        background: 'rgba(255, 255, 255, 0.1)',
-        borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+        backdropFilter: 'blur(24px) saturate(1.1)',
+        WebkitBackdropFilter: 'blur(24px) saturate(1.1)',
+        background: 'rgba(255, 255, 255, 0.08)',
+        borderRight: '1px solid rgba(255, 255, 255, 0.15)',
+        boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.3)',
       }
     : {
         backdropFilter: 'blur(20px) saturate(1.2)',
