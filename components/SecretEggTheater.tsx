@@ -365,7 +365,7 @@ export default function SecretEggTheater() {
             onClick={handleClose}
           >
             <motion.img
-              src="/images/bg-theater-hd.jpg"
+              src="/images/bg-theater-hd.webp"
               alt="Theater Background"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               style={{ zIndex: 0, willChange: 'transform, filter' }}

@@ -19,8 +19,8 @@ const caseStudies = [
       { title: '内容动态迭代', desc: '定时高频检索同品类高赞内容，在 2 个月内进行多轮模型测试与迭代。' }
     ],
     result: '成功打造多篇现象级爆文，实现从 0 到 8,000+ 垂直高粘性粉丝的跨越式增长。',
-    screenshot: '/images/shafa.jpg',
-    image: '/images/账号运营.png'
+    screenshot: '/images/shafa.webp',
+    image: '/images/账号运营.webp'
   },
   {
     id: 2,
@@ -36,8 +36,8 @@ const caseStudies = [
       { title: '直播前后联动', desc: '直播前预埋素人真实许愿自然流爆文，直播中李佳琦call back群众呼声，现场演示用极其直观的视觉冲击力实现高转化。' }
     ],
     result: '成功拿下 TOP 主播核心坑位，达成直播 GMV 同比强劲增长 40%。',
-    screenshot: '/images/shafa.jpg',
-    image: '/images/品牌重塑.png'
+    screenshot: '/images/shafa.webp',
+    image: '/images/品牌重塑.webp'
   },
   {
     id: 3,
@@ -53,8 +53,8 @@ const caseStudies = [
       { title: '商业合力放大', desc: '高效联动平台官方"火焰话题"与精准广告投放，实现声量滚雪球式扩散。' }
     ],
     result: '该 Campaign 成为当时小红书商业合作参与范围最广的行业案例。',
-    screenshot: '/images/shafa.jpg',
-    image: '/images/打造爆款话题.jpeg'
+    screenshot: '/images/shafa.webp',
+    image: '/images/打造爆款话题.webp'
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ const caseStudies = [
       { title: '跨界概念通感（顺柔霜）', desc: '将护肤领域的经典认知"熨斗"跨界降维引入护发品类，提炼出"沙发小熨斗"。精准利用消费者对"熨斗 = 抚平"的既有认知积累，直观传达"沙发变直、抚平毛躁"的终极痛点。' }
     ],
     result: '以极低的沟通成本，让消费者秒懂卖点，大幅缩短购买决策路径，ROI 至高到 4。',
-    screenshot: '/images/shafa.jpg'
+    screenshot: '/images/shafa.webp'
   }
 ]
 
@@ -313,7 +313,7 @@ const PolaroidPhoto = () => {
       <div className="w-[90px] p-1.5 bg-[#FAF8F5] border border-neutral-200/40">
         <div className="w-full aspect-square bg-neutral-200 overflow-hidden">
           <img 
-            src="/images/shafa.jpg" 
+            src="/images/shafa.webp" 
             alt="polaroid photo"
             className="w-full h-full object-cover"
           />
@@ -679,7 +679,7 @@ const TopBanner = ({ study }: { study: typeof caseStudies[0] }) => {
         }}
       >
         <img 
-          src="/images/shafa.jpg" 
+          src="/images/shafa.webp" 
           alt="hover image"
           className="w-full h-auto rounded-sm"
         />
