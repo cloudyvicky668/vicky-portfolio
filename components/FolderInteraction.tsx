@@ -82,7 +82,7 @@ const FolderInteraction = () => {
         transition={{ duration: 0.8 }}
       >
         <img
-          src="/images/real-vicky-forest.jpeg"
+          src="/images/real-vicky-forest-optimized.webp"
           alt="Creative Background"
           className="w-full h-full object-cover"
         />

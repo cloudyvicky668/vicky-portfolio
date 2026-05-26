@@ -36,7 +36,7 @@ export default function ViewModeProvider({
                 className="absolute inset-0 w-full h-full"
               >
                 <Image
-                  src="/images/real-vicky-forest.jpeg"
+                  src="/images/real-vicky-forest-optimized.webp"
                   alt="Creative Background"
                   fill
                   priority
