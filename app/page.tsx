@@ -22,9 +22,9 @@ export default function Home() {
 
   return (
     <ModalProvider>
-      <div className="min-h-screen relative">
+      <div className="min-h-screen relative bg-[#FAF6EF]">
         <Sidebar />
-        <main className="lg:ml-[260px] relative min-h-screen home-page-container">
+        <main className="lg:ml-[260px] relative min-h-screen home-page-container bg-[#FAF6EF]">
           <HeroSection />
         </main>
         <EasterEgg isOpen={isEggOpen} onClose={handleCloseEgg} />

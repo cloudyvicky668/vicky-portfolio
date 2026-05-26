@@ -518,7 +518,7 @@ const ProfessionalHome = () => {
       />
 
       {/* 左右平分双栏布局 */}
-      <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 items-center relative z-10">
+      <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 items-center relative z-10 overflow-hidden">
         {/* 左侧：文案 Brief 容器 */}
         <div className="w-full max-w-2xl flex flex-col justify-center px-8 md:px-16 translate-x-[5%]">
           <motion.div

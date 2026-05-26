@@ -227,7 +227,7 @@ export default function Sidebar() {
     : {
         backdropFilter: 'blur(20px) saturate(1.2)',
         WebkitBackdropFilter: 'blur(20px) saturate(1.2)',
-        background: 'linear-gradient(180deg, rgba(248, 242, 232, 0.75) 0%, rgba(245, 237, 224, 0.7) 58%, rgba(241, 230, 216, 0.65) 100%)',
+        background: 'linear-gradient(180deg, rgba(248, 242, 232, 0.98) 0%, rgba(245, 237, 224, 0.98) 58%, rgba(241, 230, 216, 0.98) 100%)',
         borderRight: '1px solid rgba(255, 255, 255, 0.4)',
         boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 4px 24px rgba(0, 0, 0, 0.04)',
       }
@@ -250,7 +250,7 @@ export default function Sidebar() {
 
       {/* 侧边栏主容器 */}
       <aside
-        className={`sidebar fixed left-0 top-0 z-40 h-screen w-[260px] transition-transform duration-300 ease-out lg:translate-x-0 ${
+        className={`sidebar fixed left-0 top-0 z-50 h-screen w-[260px] transition-transform duration-300 ease-out lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } ${isCreativeMode ? 'creative-mode' : ''}`}
         style={sidebarStyle}
