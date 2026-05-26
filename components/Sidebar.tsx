@@ -219,14 +219,7 @@ export default function Sidebar() {
 
   // 根据模式设置侧边栏样式
   const sidebarStyle = isCreativeMode 
-    ? {
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        background: 'transparent',
-        backgroundColor: 'rgba(255, 255, 255, 0.05)',
-        borderRight: '1px solid rgba(255, 255, 255, 0.1)',
-        boxShadow: 'none',
-      }
+    ? {}
     : {
         backdropFilter: 'blur(20px) saturate(1.2)',
         WebkitBackdropFilter: 'blur(20px) saturate(1.2)',
@@ -253,9 +246,13 @@ export default function Sidebar() {
 
       {/* 侧边栏主容器 */}
       <aside
-        className={`sidebar fixed left-0 top-0 z-50 h-screen w-[260px] transition-transform duration-300 ease-out lg:translate-x-0 ${
+        className={`sidebar fixed left-0 top-0 h-screen w-[260px] transition-transform duration-300 ease-out lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } ${isCreativeMode ? 'creative-mode' : ''}`}
+        } ${
+          isCreativeMode 
+            ? 'creative-mode z-20 bg-white/10 backdrop-blur-xl border-r border-white/10 text-white shadow-none' 
+            : 'z-50'
+        }`}
         style={sidebarStyle}
         role="navigation"
         aria-label="主导航"
