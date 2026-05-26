@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SecretEggTheater from './SecretEggTheater'
+import Image from 'next/image'
 
 // 音频波形动画组件
 const AudioWave = ({ length, color }: { length: number; color: string }) => {
@@ -72,12 +73,17 @@ export default function AboutMe() {
                   filter="url(#roughFilter)"
                 />
               </svg>
-              <img 
-                src="/images/vicky.jpg" 
-                alt="Vicky Portrait"
-                className="w-full h-auto object-cover relative z-0"
-                style={{ transform: 'rotate(-1deg)' }}
-              />
+              <div className="relative w-full aspect-[4/5] overflow-hidden" style={{ transform: 'rotate(-1deg)' }}>
+                <Image
+                  src="/images/vicky.webp"
+                  alt="Vicky Portrait"
+                  fill
+                  priority
+                  placeholder="blur"
+                  blurDataURL="data:image/webp;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2teleQHmAKbk2tel"
+                  className="object-cover relative z-0"
+                />
+              </div>
             </div>
 
             {/* 四通道整合系统 - 放到图片下方 */}
