@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ToggleSwitch from './ToggleSwitch'
-import Image from 'next/image'
 
 // 引入霞鹜文楷字体
 if (typeof window !== 'undefined') {
@@ -278,8 +277,13 @@ const CreativeMode = ({ onToggle }: CreativeModeProps) => {
                 position: 'absolute',
               }}
             >
-              <motion.div
-                className="relative w-full"
+              <motion.img
+                src={folder.cover}
+                alt={folder.name}
+                className="w-full h-auto object-contain"
+                style={{
+                  filter: 'drop-shadow(6px 8px 12px rgba(0,0,0,0.18))',
+                }}
                 animate={{
                   rotate: [0, 1.5, -1.5, 0],
                   transition: {
@@ -288,18 +292,7 @@ const CreativeMode = ({ onToggle }: CreativeModeProps) => {
                     ease: 'easeInOut'
                   }
                 }}
-              >
-                <Image
-                  src={folder.cover}
-                  alt={folder.name}
-                  fill
-                  priority
-                  className="object-contain"
-                  style={{
-                    filter: 'drop-shadow(6px 8px 12px rgba(0,0,0,0.18))',
-                  }}
-                />
-              </motion.div>
+              />
               
               {/* 文件夹标签 */}
               <motion.div

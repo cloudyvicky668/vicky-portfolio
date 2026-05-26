@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <body className="min-h-screen overflow-y-auto" style={{ margin: 0, padding: 0 }}>
+      <body className="min-h-screen w-full max-w-full overflow-x-hidden overflow-y-auto" style={{ margin: 0, padding: 0 }}>
         <ClientLayout>
           <ViewModeProvider>
             {children}
