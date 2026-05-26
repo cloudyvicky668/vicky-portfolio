@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ViewModeContext } from './ViewModeContext'
+import Image from 'next/image'
 
 export default function ViewModeProvider({
   children,
@@ -32,15 +33,17 @@ export default function ViewModeProvider({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.6, ease: 'easeInOut' }}
-                className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                style={{ 
-                  backgroundImage: `url('/images/creative-bg-clean.jpeg')`,
-                  backgroundColor: '#F5F2EB',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center center',
-                  backgroundRepeat: 'no-repeat',
-                }}
-              />
+                className="absolute inset-0 w-full h-full"
+              >
+                <Image
+                  src="/images/creative-bg.webp"
+                  alt="Creative Background"
+                  fill
+                  priority
+                  className="object-cover"
+                  style={{ backgroundColor: '#F5F2EB' }}
+                />
+              </motion.div>
             ) : (
               <motion.div
                 key="professional-bg"
