@@ -84,7 +84,8 @@ const FolderInteraction = () => {
         <img
           src="/images/real-vicky-forest-optimized.webp"
           alt="Creative Background"
-          className="w-full h-full object-cover"
+          loading="eager"
+          className="w-full h-full object-cover transition-opacity duration-300"
         />
         <div className="absolute inset-0 bg-[#FDFBF7]/30" />
       </motion.div>

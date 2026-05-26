@@ -39,8 +39,9 @@ export default function ViewModeProvider({
                   src="/images/real-vicky-forest-optimized.webp"
                   alt="Creative Background"
                   fill
-                  priority
-                  className="object-cover"
+                  priority={true}
+                  loading="eager"
+                  className="object-cover transition-opacity duration-300"
                   style={{ backgroundColor: '#F5F2EB' }}
                 />
               </motion.div>

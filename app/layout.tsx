@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import ViewModeProvider from './ViewModeProvider'
 import ClientLayout from './ClientLayout'
+import Head from 'next/head'
 
 export const metadata: Metadata = {
   title: 'Vicky Zhao - Creative Designer',
@@ -15,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
+      <Head>
+        <link rel="preload" href="/images/real-vicky-forest-optimized.webp" as="image" type="image/webp" />
+      </Head>
       <body className="min-h-screen w-full max-w-full overflow-x-hidden overflow-y-auto bg-[#FAF6EF]" style={{ margin: 0, padding: 0 }}>
         <ClientLayout>
           <ViewModeProvider>
